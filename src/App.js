@@ -10,14 +10,40 @@ import {
 class App extends Component {
   state = {
     fields: {},
+
     cpu: "",
       ram: "",
-      disk: ""
+      disk: "",
+
+      BMHostsOverall: "",
+      costPerMonthBM: "",
+      costPerMonthSW_Windows: "",
+      costPerMonthSW_SGD: "",
+      costPerMonthManagementVM: "",
+      totalPerMonth: "",
+      totalPerUserPerMonth: ""
   };
 
 
-  onSubmit = (fields,cpu, ram, disk) => {
+  onSubmit = (fields,cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
+              costPerMonthManagementVM, totalPerMonth, totalPerUserPerMonth) => {
+
+     const BMHostoCPUVMsavailable = 182;
+      const BMHostoCPUSessionsavailable = 400;
+      const BMHostCPUtotal = 52;
+      const BMHostRAMavailable = 756;
+      const BMHostCostHrDenseIO = 0.1275;
+      const OCIVMCostOCPUHour = 0.0638;
+      const WindowsServerOSHr = 0.0204;
+      const SGDUserYr = 150;
+      const OCIHoursinamonth = 744;
+
+      const SGD_CPU = 2;
+      const SGD_RAM = 7;
+      const SGD_Storage = 25;
+
     this.setState({fields});
+
     cpu = (fields.numPowerUsers*2) + (fields.numKnowledgeUsers*1) + (fields.numTaskUsers*1) +
         (fields.numCustomUsers*fields.customCPUs);
 
@@ -27,7 +53,10 @@ class App extends Component {
       disk = (fields.numPowerUsers*150) + (fields.numKnowledgeUsers*100) + (fields.numTaskUsers*100) +
           (fields.numCustomUsers*fields.customDisk);
 
-    this.setState({cpu, ram, disk});
+      BMHostsOverall = 5;
+
+    this.setState({cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
+        costPerMonthManagementVM, totalPerMonth, totalPerUserPerMonth});
 
   };
 
@@ -93,13 +122,13 @@ class App extends Component {
             </thead>
             <tbody>
             <tr>
-              <td data-label="Bare Metal Hosts">{JSON.stringify((this.state.fields.firstName), null, 2)}</td>
-              <td data-label="Cost/Mo Bare Metal">{JSON.stringify(this.state.fields.lastName, null, 2)}</td>
-              <td data-label="Cost/Mo SW Windows">{JSON.stringify(this.state.fields.username, null, 2)}</td>
-              <td data-label="Cost/Mo SW SGD">{JSON.stringify(this.state.fields.email, null, 2)}</td>
-              <td data-label="Cost/Mo Management VM">{JSON.stringify(this.state.fields.password, null, 2)}</td>
-              <td data-label="Total Cost/Mo">{JSON.stringify(this.state.fields.password, null, 2)}</td>
-              <td data-label="Total Cost/User/Mo">{JSON.stringify(this.state.fields.password, null, 2)}</td>
+              <td data-label="Bare Metal Hosts">{this.state.BMHostsOverall}</td>
+              <td data-label="Cost/Mo Bare Metal">{this.state.costPerMonthBM}</td>
+              <td data-label="Cost/Mo SW Windows">{this.state.costPerMonthSW_Windows}</td>
+              <td data-label="Cost/Mo SW SGD">{this.state.costPerMonthSW_SGD}</td>
+              <td data-label="Cost/Mo Management VM">{this.state.costPerMonthManagementVM}</td>
+              <td data-label="Total Cost/Mo">{this.state.totalPerMonth}</td>
+              <td data-label="Total Cost/User/Mo">{this.state.totalPerUserPerMonth}</td>
             </tr>
             </tbody>
           </table>
