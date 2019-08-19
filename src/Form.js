@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import {
     Button,
-    Select,
-    Header,
-    Image,
-    Dropdown,
     Form
 } from 'semantic-ui-react'
 

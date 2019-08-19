@@ -3,11 +3,8 @@ import "./App.css";
 import FormExampleFieldControl from "./Form";
 
 import {
-  Button,
-  Select,
   Header,
   Image,
-  Dropdown
 } from 'semantic-ui-react'
 
 class App extends Component {
