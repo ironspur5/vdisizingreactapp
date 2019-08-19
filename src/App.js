@@ -10,15 +10,25 @@ import {
 class App extends Component {
   state = {
     fields: {},
-    cpu: ""
+    cpu: "",
+      ram: "",
+      disk: ""
   };
 
 
-  onSubmit = (fields,cpu) => {
+  onSubmit = (fields,cpu, ram, disk) => {
     this.setState({fields});
-    cpu = fields.firstName*2
-    //worked! now can
-    this.setState({cpu});
+    cpu = (fields.numPowerUsers*2) + (fields.numKnowledgeUsers*1) + (fields.numTaskUsers*1) +
+        (fields.numCustomUsers*fields.customCPUs);
+
+      ram = (fields.numPowerUsers*8) + (fields.numKnowledgeUsers*4) + (fields.numTaskUsers*2) +
+          (fields.numCustomUsers*fields.customRAM);
+
+      disk = (fields.numPowerUsers*150) + (fields.numKnowledgeUsers*100) + (fields.numTaskUsers*100) +
+          (fields.numCustomUsers*fields.customDisk);
+
+    this.setState({cpu, ram, disk});
+
   };
 
   render() {
@@ -58,8 +68,8 @@ class App extends Component {
             <tbody>
             <tr>
               <td data-label="oCPUs">{this.state.cpu}</td>
-              <td data-label="RAM">{JSON.stringify(this.state.fields.firstName, null, 2)}</td>
-              <td data-label="Disk">{JSON.stringify(this.state.fields.firstName, null, 2)}</td>
+              <td data-label="RAM">{this.state.ram}</td>
+              <td data-label="Disk">{this.state.disk}</td>
             </tr>
             </tbody>
           </table>
