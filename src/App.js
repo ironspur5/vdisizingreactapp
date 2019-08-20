@@ -67,6 +67,19 @@ class App extends Component {
         totalPerUserPerMonth = (totalPerMonth / (fields.numPowerUsers + fields.numKnowledgeUsers + fields.numTaskUsers
             + fields.numCustomUsers));
 
+        this.setState({
+            cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
+            costPerMonthManagementVM, totalPerMonth, totalPerUserPerMonth
+        });
+
+        BMHostsOverall = Math.ceil(BMHostsOverall);
+
+        costPerMonthBM = (costPerMonthBM).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        costPerMonthSW_Windows = (costPerMonthSW_Windows).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        costPerMonthSW_SGD = (costPerMonthSW_SGD).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        costPerMonthManagementVM = (costPerMonthManagementVM).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        totalPerMonth = (totalPerMonth).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        //totalPerUserPerMonth = (totalPerUserPerMonth).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
         this.setState({
             cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
@@ -127,23 +140,23 @@ class App extends Component {
                     <thead>
                     <tr>
                         <th>Bare Metal Hosts</th>
-                        <th>Cost/Mo Bare Metal</th>
-                        <th>Cost/Mo SW Windows</th>
-                        <th>Cost/Mo SW SGD</th>
-                        <th>Cost/Mo Management VM</th>
-                        <th>Total Cost/Mo</th>
-                        <th>Total Cost/User/Mo</th>
+                        <th>Cost/Mo Bare Metal ($)</th>
+                        <th>Cost/Mo SW Windows ($)</th>
+                        <th>Cost/Mo SW SGD ($)</th>
+                        <th>Cost/Mo Management VM ($)</th>
+                        <th>Total Cost/Mo ($)</th>
+                        <th>Total Cost/User/Mo ($)</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td data-label="Bare Metal Hosts">{this.state.BMHostsOverall}</td>
-                        <td data-label="Cost/Mo Bare Metal">{this.state.costPerMonthBM}</td>
-                        <td data-label="Cost/Mo SW Windows">{this.state.costPerMonthSW_Windows}</td>
-                        <td data-label="Cost/Mo SW SGD">{this.state.costPerMonthSW_SGD}</td>
-                        <td data-label="Cost/Mo Management VM">{this.state.costPerMonthManagementVM}</td>
-                        <td data-label="Total Cost/Mo">{this.state.totalPerMonth}</td>
-                        <td data-label="Total Cost/User/Mo">{this.state.totalPerUserPerMonth}</td>
+                        <td data-label="Cost/Mo Bare Metal ($)">{this.state.costPerMonthBM}</td>
+                        <td data-label="Cost/Mo SW Windows ($)">{this.state.costPerMonthSW_Windows}</td>
+                        <td data-label="Cost/Mo SW SGD ($)">{this.state.costPerMonthSW_SGD}</td>
+                        <td data-label="Cost/Mo Management VM ($)">{this.state.costPerMonthManagementVM}</td>
+                        <td data-label="Total Cost/Mo ($)">{this.state.totalPerMonth}</td>
+                        <td data-label="Total Cost/User/Mo ($)">{this.state.totalPerUserPerMonth}</td>
                     </tr>
                     </tbody>
                 </table>
