@@ -52,6 +52,7 @@ class App extends Component {
 
         var bmHostsByCPU = (cpu / BMHostoCPUVMsavailable);
         var bmHostsbyRAM = (ram / BMHostRAMavailable);
+        var totalUsers = (Number(fields.numPowerUsers) + Number(fields.numKnowledgeUsers) + Number(fields.numTaskUsers) + Number(fields.numCustomUsers));
         BMHostsOverall = Math.max(bmHostsByCPU, bmHostsbyRAM);
 
         costPerMonthBM = (BMHostsOverall * BMHostCostHrDenseIO * OCIHoursinamonth * BMHostCPUtotal);
@@ -64,8 +65,7 @@ class App extends Component {
 
         totalPerMonth = (costPerMonthBM + costPerMonthSW_Windows + costPerMonthSW_SGD + costPerMonthManagementVM);
 
-        totalPerUserPerMonth = (totalPerMonth / (fields.numPowerUsers + fields.numKnowledgeUsers + fields.numTaskUsers
-            + fields.numCustomUsers));
+        totalPerUserPerMonth = (totalPerMonth/totalUsers);
 
         this.setState({
             cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
@@ -79,7 +79,7 @@ class App extends Component {
         costPerMonthSW_SGD = (costPerMonthSW_SGD).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         costPerMonthManagementVM = (costPerMonthManagementVM).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         totalPerMonth = (totalPerMonth).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-        //totalPerUserPerMonth = (totalPerUserPerMonth).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        totalPerUserPerMonth = (totalPerUserPerMonth).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
         this.setState({
             cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
@@ -95,11 +95,13 @@ class App extends Component {
                 <Header>
                 </Header>
 
-                <Header as='h2'>
+                <Header as='h2' >
                     <Image
-                        style={{width: '175px', height: 'auto'}}
-                        src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
-                    /> Cloud
+                        style={{width: '250px', height: 'auto'}}
+                        //src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
+                        //src='https://www.stickpng.com/assets/images/584817d6cef1014c0b5e4999.png'
+                        src={require('./OracleLogov2.png')}
+                    />
                 </Header>
 
                 <Header>
