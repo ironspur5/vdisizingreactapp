@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b51f1f-acfb-41cc-b17d-14fbfced8df3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OracleLogov2.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +128,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566310289737</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Final Draft">
+      <created>1566336052119</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1566336052120</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Final Draft">
+      <created>1566336116176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1566336116176</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Final Draft">
+      <created>1566336209660</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1566336209660</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +173,7 @@
     <MESSAGE value="deleted unused imports" />
     <MESSAGE value="WIP" />
     <MESSAGE value="finished all the math" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished all the math" />
+    <MESSAGE value="Final Draft" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Draft" />
   </component>
 </project>
