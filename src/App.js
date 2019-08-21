@@ -94,16 +94,16 @@ class App extends Component {
 
                 <Header>
                 </Header>
-
-                <Header as='h2' >
-                    <Image
-                        style={{width: '250px', height: 'auto'}}
-                        //src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
-                        //src='https://www.stickpng.com/assets/images/584817d6cef1014c0b5e4999.png'
-                        src={require('./OracleLogov2.png')}
-                    />
-                </Header>
-
+                    <div className="App2">
+                        <Header as='h2' >
+                            <Image
+                                style={{width: '250px', height: 'auto'}}
+                                //src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
+                                //src='https://www.stickpng.com/assets/images/584817d6cef1014c0b5e4999.png'
+                                src={require('./OracleLogov2.png')}
+                            />
+                        </Header>
+                    </div>
                 <Header>
                 </Header>
 
