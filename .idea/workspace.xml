@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b51f1f-acfb-41cc-b17d-14fbfced8df3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566487623344</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updated displays for user readability part 2">
+      <created>1566487963471</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1566487963471</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +202,7 @@
     <MESSAGE value="Final Draft" />
     <MESSAGE value="Added Header Graphic" />
     <MESSAGE value="Updated displays for user readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated displays for user readability" />
+    <MESSAGE value="Updated displays for user readability part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated displays for user readability part 2" />
   </component>
 </project>
