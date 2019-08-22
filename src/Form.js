@@ -38,7 +38,7 @@ export default class FormExampleFieldControl extends Component  {
 
     render() {
         return (
-            <Form className="ui blue segment">
+            <Form className="ui segment" style={{borderColor:'#1178ab'}}>
                 <Form.Group widths='equal' >
                 <Form.Input
                             name="numPowerUsers"
