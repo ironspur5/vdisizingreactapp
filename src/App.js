@@ -108,13 +108,13 @@ class App extends Component {
                 <Header>
                 </Header>
 
-                <div className="ui blue inverted segment">
+                <div className="ui inverted segment" style={{backgroundColor:'#1178ab'}}>
                     <Header as='h2'>Visual Desktop Interface (VDI) Pricing Tool</Header>
                 </div>
 
 
                 <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)}/>
-                <div className="ui blue segment">
+                <div className="ui segment"  style={{borderColor:'#1178ab'}}>
                 <Header>Total Requirements</Header>
 
                 <table className="ui celled table" >
