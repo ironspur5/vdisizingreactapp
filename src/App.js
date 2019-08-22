@@ -114,7 +114,7 @@ class App extends Component {
 
 
                 <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)}/>
-                <div className="ui blue segment">
+                <div className="ui segment" style={{borderColor:'#1178ab'}}>
                 <Header>Total Requirements</Header>
 
                 <table className="ui celled table" >
