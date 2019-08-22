@@ -37,44 +37,44 @@ export default class FormExampleFieldControl extends Component  {
         return (
             <Form>
                 <Form.Group widths='equal'>
-                    <Form.Input
-                        name="numPowerUsers"
-                        type="number"
-                        min="0"
-                        label="# Users"
-                        placeholder="# Users"
-                        value={this.state.numPowerUsers}
-                        onChange={e => this.change(e)}
-                    />
-                    <Form.Input data-tooltip="Heavy Resource Consumption" data-position="top left"
-                                label="User Type"
-                                readOny
-                                value="Power"
-                                placeholder="Last name"
-                                onChange={e => this.change(e)}
-                    />
-                    <Form.Input
-                        label="# CPUs/User"
-                        readOnly
-                        value="2"
-                        placeholder="CPUs/User"
-                        onChange={e => this.change(e)}
-                    />
-                    <Form.Input
-                        readOnly
-                        value="8"
-                        label="RAM/User (GB)"
-                        placeholder="RAM/User"
-                        onChange={e => this.change(e)}
-                    />
-                    <Form.Input
-                        readOnly
-                        value="150"
-                        label="Disk/User (GB)"
-                        placeholder="Disk/User"
-                        onChange={e => this.change(e)}
-                    />
-                </Form.Group>
+                <Form.Input
+                            name="numPowerUsers"
+                            type="number"
+                            min="0"
+                            label="# Users"
+                            placeholder="# Users"
+                            value={this.state.numPowerUsers}
+                            onChange={e => this.change(e)}
+                />
+                <Form.Input data-tooltip="Heavy Resource Consumption" data-position="top left"
+                    label="User Type"
+                    readOny
+                    value="Power"
+                    placeholder="Last name"
+                    onChange={e => this.change(e)}
+                />
+                <Form.Input
+                    label="# CPUs/User"
+                    readOnly
+                    value="2"
+                    placeholder="CPUs/User"
+                    onChange={e => this.change(e)}
+                />
+                <Form.Input
+                    readOnly
+                    value="8"
+                    label="RAM/User (GB)"
+                    placeholder="RAM/User"
+                    onChange={e => this.change(e)}
+                />
+                <Form.Input
+                    readOnly
+                    value="150"
+                    label="Disk/User (GB)"
+                    placeholder="Disk/User"
+                    onChange={e => this.change(e)}
+                />
+            </Form.Group>
 
                 <Form.Group widths='equal'>
                     <Form.Input
