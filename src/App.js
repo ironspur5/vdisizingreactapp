@@ -143,12 +143,12 @@ class App extends Component {
                     <thead>
                     <tr>
                         <th>Bare Metal Hosts</th>
-                        <th>Cost/Mo Bare Metal ($)</th>
-                        <th>Cost/Mo SW Windows ($)</th>
-                        <th>Cost/Mo SW SGD ($)</th>
-                        <th>Cost/Mo Management VM ($)</th>
-                        <th>Total Cost/Mo ($)</th>
-                        <th>Total Cost/User/Mo ($)</th>
+                        <th>Bare Metal $/month</th>
+                        <th>SW Windows $/month</th>
+                        <th>SW SGD $/month</th>
+                        <th>Management VM $/month</th>
+                        <th>Total $/month</th>
+                        <th>Total $/month/user</th>
                     </tr>
                     </thead>
                     <tbody>

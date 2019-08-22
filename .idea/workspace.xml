@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b51f1f-acfb-41cc-b17d-14fbfced8df3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566336261761</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated displays for user readability">
+      <created>1566487623344</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1566487623344</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +193,7 @@
     <MESSAGE value="finished all the math" />
     <MESSAGE value="Final Draft" />
     <MESSAGE value="Added Header Graphic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Header Graphic" />
+    <MESSAGE value="Updated displays for user readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated displays for user readability" />
   </component>
 </project>
