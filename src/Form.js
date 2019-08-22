@@ -160,9 +160,8 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
-                                value="Custom"
-                                readOnly
-                                placeholder="Last name"
+
+                                placeholder="Custom"
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
