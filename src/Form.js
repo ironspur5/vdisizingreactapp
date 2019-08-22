@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import {
     Button,
-    Form
+    Form,
+    Divider,
+    Segment,
+    Input
 } from 'semantic-ui-react'
 
 export default class FormExampleFieldControl extends Component  {
@@ -35,8 +38,8 @@ export default class FormExampleFieldControl extends Component  {
 
     render() {
         return (
-            <Form>
-                <Form.Group widths='equal'>
+            <Form className="ui blue segment">
+                <Form.Group widths='equal' >
                 <Form.Input
                             name="numPowerUsers"
                             type="number"
@@ -92,6 +95,7 @@ export default class FormExampleFieldControl extends Component  {
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
+
                         value="1"
                         readOnly
                         placeholder="CPUs/User"
@@ -187,7 +191,7 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-
+                <div className="ui divider"></div>
 
                 <Button style={{backgroundColor: '#cad9de'}} onClick={e => this.onSubmit(e)}>Get Estimate</Button>
 

@@ -5,6 +5,7 @@ import FormExampleFieldControl from "./Form";
 import {
     Header,
     Image,
+    Segment
 } from 'semantic-ui-react'
 
 class App extends Component {
@@ -113,10 +114,10 @@ class App extends Component {
 
 
                 <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)}/>
-
+                <div className="ui blue segment">
                 <Header>Total Requirements</Header>
 
-                <table className="ui celled table">
+                <table className="ui celled table" >
                     <thead>
                     <tr>
                         <th>oCPUs</th>
@@ -162,7 +163,7 @@ class App extends Component {
                     </tr>
                     </tbody>
                 </table>
-            </div>
+            </div></div>
         );
     }
 }
