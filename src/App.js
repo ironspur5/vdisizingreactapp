@@ -67,22 +67,24 @@ class App extends Component {
           <Header>
           </Header>
 
-          <Header as='h2'>
-            <Image
+          <div className='App2'>
+              <Header>
+                <Image
                 style={{width: '175px', height: 'auto'}}
                 src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
-            /> Cloud
-          </Header>
+                /> Cloud </Header>
+          </div>
+
+            <div className="ui blue inverted segment">
+                <Header as='h2'>Visual Desktop Interface (VDI) Pricing Tool</Header>
+            </div>
 
           <Header>
           </Header>
 
-          <div className="ui blue inverted segment">
-            <Header as='h2'>Visual Desktop Interface (VDI) Pricing Tool</Header>
-          </div>
 
+            <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)} />
 
-          <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)} />
 
           <Header>Total Requirements</Header>
 

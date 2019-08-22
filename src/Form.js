@@ -38,6 +38,7 @@ export default class FormExampleFieldControl extends Component  {
             <Form>
                 <Form.Group widths='equal'>
                 <Form.Input
+
                             name="numPowerUsers"
                             type="number"
                             label="# Users"
