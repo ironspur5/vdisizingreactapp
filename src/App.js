@@ -154,12 +154,12 @@ class App extends Component {
                     <tbody>
                     <tr>
                         <td data-label="Bare Metal Hosts">{this.state.BMHostsOverall}</td>
-                        <td data-label="Cost/Mo Bare Metal ($)">{this.state.costPerMonthBM}</td>
-                        <td data-label="Cost/Mo SW Windows ($)">{this.state.costPerMonthSW_Windows}</td>
-                        <td data-label="Cost/Mo SW SGD ($)">{this.state.costPerMonthSW_SGD}</td>
-                        <td data-label="Cost/Mo Management VM ($)">{this.state.costPerMonthManagementVM}</td>
-                        <td data-label="Total Cost/Mo ($)">{this.state.totalPerMonth}</td>
-                        <td data-label="Total Cost/User/Mo ($)">{this.state.totalPerUserPerMonth}</td>
+                        <td data-label="Bare Metal $/month">{this.state.costPerMonthBM}</td>
+                        <td data-label="SW Windows $/month">{this.state.costPerMonthSW_Windows}</td>
+                        <td data-label="SW SGD $/month">{this.state.costPerMonthSW_SGD}</td>
+                        <td data-label="Management VM $/month">{this.state.costPerMonthManagementVM}</td>
+                        <td data-label="Total $/month">{this.state.totalPerMonth}</td>
+                        <td data-label="Total $/month/user">{this.state.totalPerUserPerMonth}</td>
                     </tr>
                     </tbody>
                 </table>
