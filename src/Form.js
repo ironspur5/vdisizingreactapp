@@ -22,7 +22,9 @@ export default class FormExampleFieldControl extends Component  {
 
         customCPUs: "",
         customRAM: "",
-        customDisk: ""
+        customDisk: "",
+
+        customAdditional: []
     };
 
     change = e => {
@@ -34,6 +36,10 @@ export default class FormExampleFieldControl extends Component  {
     onSubmit = e => {
         e.preventDefault();
         this.props.onSubmit(this.state);
+    };
+
+    addRow = e => {
+
     };
 
     render() {
@@ -189,6 +195,10 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                 </Form.Group>
+
+
+                <button style={{backgroundColor: '#cad9de'}} className="circular ui button" data-tooltip="Add another input" data-position="top left" onClick={e => this.addRow(e)}>+</button>
+
 
                 <div className="ui divider"></div>
 
