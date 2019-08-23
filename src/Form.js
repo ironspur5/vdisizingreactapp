@@ -98,7 +98,6 @@ export default class FormExampleFieldControl extends Component  {
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-
                         value="1"
                         readOnly
                         placeholder="CPUs/User"
@@ -151,8 +150,8 @@ export default class FormExampleFieldControl extends Component  {
                         placeholder="Disk/User"
                         onChange={e => this.change(e)}
                     />
-                </Form.Group>
 
+                </Form.Group>
                 <Form.Group widths='equal'>
                     <Form.Input
                         name="numCustomUsers"
@@ -163,7 +162,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
-
                                 placeholder="Custom"
                                 onChange={e => this.change(e)}
                     />
@@ -193,12 +191,8 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-
                 <button style={{backgroundColor: '#cad9de'}} className="circular ui button" data-tooltip="Add up to 3 additional inputs" data-position="top left" onClick={e => this.addRow(e)}>+</button>
-
-
                 <div className="ui divider"></div>
-
                 <Button style={{backgroundColor: '#cad9de'}} onClick={e => this.onSubmit(e)}>Get Estimate</Button>
 
             </Form>
