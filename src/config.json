@@ -1,0 +1,23 @@
+{
+  "BMHostoCPUVMsavailable" : 182,
+  "BMHostCPUtotal" : 52,
+  "BMHostRAMavailable" : 756,
+  "BMHostCostHrDenseIO" : 0.1275,
+  "OCIVMCostOCPUHour" : 0.0638,
+  "WindowsServerOSHr" : 0.0204,
+  "SGDUserYr" : 150,
+  "OCIHoursinamonth" : 744,
+  "SGD_CPU" : 2,
+
+  "PowerCPUs" : 2,
+  "KnowledgeCPUs" : 1,
+  "TaskCPUs" : 1,
+
+  "PowerRAM" : 8,
+  "KnowledgeRAM" : 4,
+  "TaskRAM" : 2,
+
+  "PowerDisk" : 150,
+  "KnowledgeDisk" : 100,
+  "TaskDisk" : 100
+}
