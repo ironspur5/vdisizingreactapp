@@ -194,7 +194,7 @@ export default class FormExampleFieldControl extends Component  {
                 </Form.Group>
 
 
-                <button style={{backgroundColor: '#cad9de'}} className="circular ui button" data-tooltip="Add another input" data-position="top left" onClick={e => this.addRow(e)}>+</button>
+                <button style={{backgroundColor: '#cad9de'}} className="circular ui button" data-tooltip="Add up to 3 additional inputs" data-position="top left" onClick={e => this.addRow(e)}>+</button>
 
 
                 <div className="ui divider"></div>
