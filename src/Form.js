@@ -21,8 +21,25 @@ export default class FormExampleFieldControl extends Component  {
         customRAM: "",
         customDisk: "",
 
-        customAdditional: []
+        numCustomUsers2: "",
+
+        customCPUs2: "",
+        customRAM2: "",
+        customDisk2: "",
     };
+
+    constructor() {
+        super();
+        this.state = {
+            shown: true,
+        };
+    }
+
+    toggle() {
+        this.setState({
+            shown: !this.state.shown
+        });
+    }
 
     change = e => {
         this.setState({
@@ -35,11 +52,15 @@ export default class FormExampleFieldControl extends Component  {
         this.props.onSubmit(this.state);
     };
 
-    addRow = e => {
-
-    };
 
     render() {
+        const shown = {
+            display: this.state.shown ? "block" : "none"
+        };
+
+        const hidden = {
+            display: this.state.shown ? "none" : "block"
+        }
         return (
             <Form className="ui segment" style={{borderColor:'#1178ab'}}>
                 <Form.Group widths='equal' >
@@ -193,8 +214,52 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
+                <Form.Group widths='equal'>
+                    <Form.Input
+                        style={ hidden }
+                        name="numCustomUsers"
+                        type="number"
+                        min="0"
+                        placeholder="# Users"
+                        value={this.state.numCustomUsers2}
+                        onChange={e => this.change(e)}
+                    />
+                    <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
+                                style={ hidden }
+                                placeholder="Custom"
+                                onChange={e => this.change(e)}
+                    />
+                    <Form.Input
+                        style={ hidden }
+                        name="customCPUs"
+                        type="number"
+                        min="0"
+                        placeholder="CPUs/User"
+                        value={this.state.customCPUs2}
+                        onChange={e => this.change(e)}
+                    />
+                    <Form.Input
+                        style={ hidden }
+                        name="customRAM"
+                        type="number"
+                        min="0"
+                        placeholder="RAM/User"
+                        value={this.state.customRAM2}
+                        onChange={e => this.change(e)}
+                    />
+                    <Form.Input
+                        style={ hidden }
+                        name="customDisk"
+                        type="number"
+                        min="0"
+                        placeholder="Disk/User"
+                        value={this.state.customDisk2}
+                        onChange={e => this.change(e)}
+                    />
+                </Form.Group>
 
-                <button style={{backgroundColor: '#cad9de'}} className="circular ui button" data-tooltip="Add up to 3 additional inputs" data-position="top left" onClick={e => this.addRow(e)}>+</button>
+
+                <button style={{backgroundColor: '#cad9de'}} className="circular ui button" data-tooltip="Add up to 3 additional inputs" data-position="top left" onClick={this.toggle.bind(this)}>+</button>
 
 
                 <div className="ui divider"></div>
