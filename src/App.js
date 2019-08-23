@@ -55,18 +55,13 @@ class App extends Component {
         var bmHostsByCPU = (cpu / BMHostoCPUVMsavailable);
         var bmHostsbyRAM = (ram / BMHostRAMavailable);
         var totalUsers = (Number(fields.numPowerUsers) + Number(fields.numKnowledgeUsers) + Number(fields.numTaskUsers) + Number(fields.numCustomUsers));
+
         BMHostsOverall = Math.max(bmHostsByCPU, bmHostsbyRAM);
-
         costPerMonthBM = (BMHostsOverall * BMHostCostHrDenseIO * OCIHoursinamonth * BMHostCPUtotal);
-
         costPerMonthSW_Windows = (BMHostsOverall * OCIHoursinamonth * WindowsServerOSHr * BMHostCPUtotal);
-
         costPerMonthSW_SGD = (SGDUserYr / 12);
-
         costPerMonthManagementVM = (SGD_CPU * OCIHoursinamonth * OCIVMCostOCPUHour);
-
         totalPerMonth = (costPerMonthBM + costPerMonthSW_Windows + costPerMonthSW_SGD + costPerMonthManagementVM);
-
         totalPerUserPerMonth = (totalPerMonth/totalUsers);
 
         this.setState({
@@ -75,7 +70,6 @@ class App extends Component {
         });
 
         BMHostsOverall = Math.ceil(BMHostsOverall);
-
         costPerMonthBM = (costPerMonthBM).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         costPerMonthSW_Windows = (costPerMonthSW_Windows).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         costPerMonthSW_SGD = (costPerMonthSW_SGD).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -113,7 +107,6 @@ class App extends Component {
                     <Header as='h2'>Visual Desktop Interface (VDI) Pricing Tool</Header>
                 </div>
 
-
                 <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)}/>
                 <div className="ui blue segment">
                 <Header>Total Requirements</Header>
@@ -138,7 +131,6 @@ class App extends Component {
                 <Header> </Header>
 
                 <Header>Total Costs</Header>
-
 
                 <table className="ui celled table">
                     <thead>
