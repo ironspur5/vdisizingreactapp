@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import {
     Button,
-    Form,
-    Divider,
-    Segment,
-    Input
+    Form
 } from 'semantic-ui-react'
 
 export default class FormExampleFieldControl extends Component  {
@@ -57,7 +54,7 @@ export default class FormExampleFieldControl extends Component  {
                 />
                 <Form.Input data-tooltip="Heavy Resource Consumption" data-position="top left"
                     label="User Type"
-                    readOny
+                    readOnly
                     value="Power"
                     placeholder="Last name"
                     onChange={e => this.change(e)}

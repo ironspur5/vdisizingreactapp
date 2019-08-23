@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import "./App.css";
 import FormExampleFieldControl from "./Form";
+import data from "./config.json";
 
 import {
     Header,
-    Image,
-    Segment
+    Image
 } from 'semantic-ui-react'
+
 
 class App extends Component {
     state = {
@@ -29,26 +30,26 @@ class App extends Component {
     onSubmit = (fields, cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
                 costPerMonthManagementVM, totalPerMonth, totalPerUserPerMonth) => {
 
-        const BMHostoCPUVMsavailable = 182;
-        const BMHostCPUtotal = 52;
-        const BMHostRAMavailable = 756;
-        const BMHostCostHrDenseIO = 0.1275;
-        const OCIVMCostOCPUHour = 0.0638;
-        const WindowsServerOSHr = 0.0204;
-        const SGDUserYr = 150;
-        const OCIHoursinamonth = 744;
+        const BMHostoCPUVMsavailable = data.BMHostoCPUVMsavailable;
+        const BMHostCPUtotal = data.BMHostCPUtotal;
+        const BMHostRAMavailable = data.BMHostRAMavailable;
+        const BMHostCostHrDenseIO = data.BMHostCostHrDenseIO;
+        const OCIVMCostOCPUHour = data.OCIVMCostOCPUHour;
+        const WindowsServerOSHr = data.WindowsServerOSHr;
+        const SGDUserYr = data.SGDUserYr;
+        const OCIHoursinamonth = data.OCIHoursinamonth;
 
-        const SGD_CPU = 2;
+        const SGD_CPU = data.SGD_CPU;
 
         this.setState({fields});
 
-        cpu = (fields.numPowerUsers * 2) + (fields.numKnowledgeUsers * 1) + (fields.numTaskUsers * 1) +
+        cpu = (fields.numPowerUsers * data.PowerCPUs) + (fields.numKnowledgeUsers * data.KnowledgeCPUs) + (fields.numTaskUsers * data.TaskCPUs) +
             (fields.numCustomUsers * fields.customCPUs);
 
-        ram = (fields.numPowerUsers * 8) + (fields.numKnowledgeUsers * 4) + (fields.numTaskUsers * 2) +
+        ram = (fields.numPowerUsers * data.PowerRAM) + (fields.numKnowledgeUsers * data.KnowledgeRAM) + (fields.numTaskUsers * data.TaskRAM) +
             (fields.numCustomUsers * fields.customRAM);
 
-        disk = (fields.numPowerUsers * 150) + (fields.numKnowledgeUsers * 100) + (fields.numTaskUsers * 100) +
+        disk = (fields.numPowerUsers * data.PowerDisk) + (fields.numKnowledgeUsers * data.KnowledgeDisk) + (fields.numTaskUsers * data.TaskDisk) +
             (fields.numCustomUsers * fields.customDisk);
 
         var bmHostsByCPU = (cpu / BMHostoCPUVMsavailable);
@@ -108,13 +109,13 @@ class App extends Component {
                 <Header>
                 </Header>
 
-                <div className="ui inverted segment" style={{backgroundColor:'#1178ab'}}>
+                <div className="ui blue inverted segment">
                     <Header as='h2'>Visual Desktop Interface (VDI) Pricing Tool</Header>
                 </div>
 
 
                 <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)}/>
-                <div className="ui segment"  style={{borderColor:'#1178ab'}}>
+                <div className="ui blue segment">
                 <Header>Total Requirements</Header>
 
                 <table className="ui celled table" >
@@ -148,7 +149,7 @@ class App extends Component {
                         <th>SW SGD $/month</th>
                         <th>Management VM $/month</th>
                         <th>Total $/month</th>
-                        <th>Total $/month/user</th>
+                        <th>Total Total $/month/user</th>
                     </tr>
                     </thead>
                     <tbody>
