@@ -44,13 +44,16 @@ class App extends Component {
         this.setState({fields});
 
         cpu = (fields.numPowerUsers * data.PowerCPUs) + (fields.numKnowledgeUsers * data.KnowledgeCPUs) + (fields.numTaskUsers * data.TaskCPUs) +
-            (fields.numCustomUsers * fields.customCPUs);
+            (fields.numCustomUsers * fields.customCPUs) + (fields.numCustomUsers2 * fields.customCPUs2) + (fields.numCustomUsers3 * fields.customCPUs3) +
+            (fields.numCustomUsers4 * fields.customCPUs4);
 
         ram = (fields.numPowerUsers * data.PowerRAM) + (fields.numKnowledgeUsers * data.KnowledgeRAM) + (fields.numTaskUsers * data.TaskRAM) +
-            (fields.numCustomUsers * fields.customRAM);
+            (fields.numCustomUsers * fields.customRAM) + (fields.numCustomUsers2 * fields.customRAM2) + (fields.numCustomUsers3 * fields.customRAM3) +
+            (fields.numCustomUsers4 * fields.customRAM4);
 
         disk = (fields.numPowerUsers * data.PowerDisk) + (fields.numKnowledgeUsers * data.KnowledgeDisk) + (fields.numTaskUsers * data.TaskDisk) +
-            (fields.numCustomUsers * fields.customDisk);
+            (fields.numCustomUsers * fields.customDisk) + (fields.numCustomUsers2 * fields.customDisk2) + (fields.numCustomUsers3 * fields.customDisk3) +
+            (fields.numCustomUsers4 * fields.customDisk4);
 
         var bmHostsByCPU = (cpu / BMHostoCPUVMsavailable);
         var bmHostsbyRAM = (ram / BMHostRAMavailable);
