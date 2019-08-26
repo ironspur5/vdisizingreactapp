@@ -224,6 +224,7 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
+
                 <Form.Group widths='equal'>
                     <Form.Input
                         style={ hidden }
@@ -312,9 +313,10 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-                <Form.Group widths='equal'>
+
+                <Form.Group style={ hidden }  >
                     <Form.Input
-                        style={ hidden }
+                        //style={ hidden }
                         name="numCustomUsers4"
                         type="number"
                         min="0"
@@ -323,12 +325,11 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
-                                style={ hidden }
+                                //style={ hidden }
                                 placeholder="Custom"
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customCPUs"
                         type="number"
                         min="0"
@@ -337,7 +338,7 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
+                        //style={ hidden }
                         name="customRAM"
                         type="number"
                         min="0"
@@ -346,7 +347,7 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
+                        //style={ hidden }
                         name="customDisk"
                         type="number"
                         min="0"
@@ -355,7 +356,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                 </Form.Group>
-
 
                 <button style={shown} className="circular ui button" data-tooltip="Click to add 3 additional inputs" data-position="top left" onClick={this.toggle.bind(this)}>+</button>
                 <button style={hidden} className="circular ui button" data-tooltip="Click to delete additional inputs" data-position="top left" onClick={this.toggle.bind(this)}>-</button>
