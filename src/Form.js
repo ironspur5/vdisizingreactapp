@@ -6,11 +6,6 @@ import {
 
 export default class FormExampleFieldControl extends Component  {
     state = {
-        firstName: "",
-        lastName: "",
-        username: "",
-        email: "",
-        password: "",
 
         numPowerUsers: "",
         numKnowledgeUsers: "",
@@ -66,53 +61,59 @@ export default class FormExampleFieldControl extends Component  {
 
     render() {
         const shown = {
-            display: this.state.shown ? "block" : "none"
+            //display: this.state.shown ? "inline" : "none"
+            visibility: this.state.shown ? "visible" : "hidden"
+
         };
 
         const hidden = {
-            display: this.state.shown ? "none" : "block"
+            //display: this.state.shown ? "none" : "block",
+            visibility: this.state.shown ? "hidden" : "visible",
+            height: this.state.shown ? "0px" : "40px",
+            marginBottom: this.state.shown ? "0px" : "12px",
+            marginTop: this.state.shown ? "0px" : "12px"
         }
         return (
             <Form className="ui segment" style={{borderColor:'#1178ab'}}>
-                <Form.Group widths='equal' >
-                <Form.Input
-                            name="numPowerUsers"
-                            type="number"
-                            min="0"
-                            label="# Users"
-                            placeholder="# Users"
-                            value={this.state.numPowerUsers}
-                            onChange={e => this.change(e)}
-                />
-                <Form.Input data-tooltip="Heavy Resource Consumption" data-position="top left"
-                    label="User Type"
-                    readOnly
-                    value="Power"
-                    placeholder="Last name"
-                    onChange={e => this.change(e)}
-                />
-                <Form.Input
-                    label="# CPUs/User"
-                    readOnly
-                    value="2"
-                    placeholder="CPUs/User"
-                    onChange={e => this.change(e)}
-                />
-                <Form.Input
-                    readOnly
-                    value="8"
-                    label="RAM/User (GB)"
-                    placeholder="RAM/User"
-                    onChange={e => this.change(e)}
-                />
-                <Form.Input
-                    readOnly
-                    value="150"
-                    label="Disk/User (GB)"
-                    placeholder="Disk/User"
-                    onChange={e => this.change(e)}
-                />
-            </Form.Group>
+                <Form.Group widths='equal'>
+                    <Form.Input
+                        name="numPowerUsers"
+                        type="number"
+                        min="0"
+                        label="# Users"
+                        placeholder="# Users"
+                        value={this.state.numPowerUsers}
+                        onChange={e => this.change(e)}
+                    />
+                    <Form.Input data-tooltip="Heavy Resource Consumption" data-position="top left"
+                                label="User Type"
+                                readOnly
+                                value="Power"
+                                placeholder="Last name"
+                                onChange={e => this.change(e)}
+                    />
+                    <Form.Input
+                        label="# CPUs/User"
+                        readOnly
+                        value="2"
+                        placeholder="CPUs/User"
+                        onChange={e => this.change(e)}
+                    />
+                    <Form.Input
+                        readOnly
+                        value="8"
+                        label="RAM/User (GB)"
+                        placeholder="RAM/User"
+                        onChange={e => this.change(e)}
+                    />
+                    <Form.Input
+                        readOnly
+                        value="150"
+                        label="Disk/User (GB)"
+                        placeholder="Disk/User"
+                        onChange={e => this.change(e)}
+                    />
+                </Form.Group>
 
                 <Form.Group widths='equal'>
                     <Form.Input
@@ -225,9 +226,8 @@ export default class FormExampleFieldControl extends Component  {
                 </Form.Group>
 
 
-                <Form.Group widths='equal'>
+                <Form.Group widths='equal' style={hidden}>
                     <Form.Input
-                        style={ hidden }
                         name="numCustomUsers2"
                         type="number"
                         min="0"
@@ -236,12 +236,10 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
-                                style={ hidden }
                                 placeholder="Custom"
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customCPUs"
                         type="number"
                         min="0"
@@ -250,7 +248,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customRAM"
                         type="number"
                         min="0"
@@ -259,7 +256,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customDisk"
                         type="number"
                         min="0"
@@ -269,9 +265,8 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-                <Form.Group widths='equal'>
+                <Form.Group widths='equal' style={ hidden }>
                     <Form.Input
-                        style={ hidden }
                         name="numCustomUsers3"
                         type="number"
                         min="0"
@@ -280,12 +275,10 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
-                                style={ hidden }
                                 placeholder="Custom"
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customCPUs"
                         type="number"
                         min="0"
@@ -294,7 +287,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customRAM"
                         type="number"
                         min="0"
@@ -303,7 +295,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        style={ hidden }
                         name="customDisk"
                         type="number"
                         min="0"
@@ -314,9 +305,8 @@ export default class FormExampleFieldControl extends Component  {
                 </Form.Group>
 
 
-                <Form.Group style={ hidden }  >
+                <Form.Group style={hidden} widths='equal'  >
                     <Form.Input
-                        //style={ hidden }
                         name="numCustomUsers4"
                         type="number"
                         min="0"
@@ -325,7 +315,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
-                                //style={ hidden }
                                 placeholder="Custom"
                                 onChange={e => this.change(e)}
                     />
@@ -338,7 +327,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        //style={ hidden }
                         name="customRAM"
                         type="number"
                         min="0"
@@ -347,7 +335,6 @@ export default class FormExampleFieldControl extends Component  {
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        //style={ hidden }
                         name="customDisk"
                         type="number"
                         min="0"
@@ -357,9 +344,7 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-                <button style={shown} className="circular ui button" data-tooltip="Click to add 3 additional inputs" data-position="top left" onClick={this.toggle.bind(this)}>+</button>
-                <button style={hidden} className="circular ui button" data-tooltip="Click to delete additional inputs" data-position="top left" onClick={this.toggle.bind(this)}>-</button>
-
+                <button className="circular ui button" data-tooltip="Click to add/remove 3 inputs" data-position="top left" onClick={this.toggle.bind(this)}>+/-</button>
 
 
                 <div className="ui divider"></div>
