@@ -4,38 +4,8 @@ import {
     Form
 } from 'semantic-ui-react'
 
+
 export default class FormExampleFieldControl extends Component  {
-    state = {
-        firstName: "",
-        lastName: "",
-        username: "",
-        email: "",
-        password: "",
-
-        numPowerUsers: 0,
-        numKnowledgeUsers: 0,
-        numTaskUsers: 0,
-
-        numCustomUsers: 0,
-        customCPUs: 0,
-        customRAM: 0,
-        customDisk: 0,
-
-        numCustomUsers2: 0,
-        customCPUs2: 0,
-        customRAM2: 0,
-        customDisk2: 0,
-
-        numCustomUsers3: 0,
-        customCPUs3: 0,
-        customRAM3: 0,
-        customDisk3: 0,
-
-        numCustomUsers4: 0,
-        customCPUs4: 0,
-        customRAM4: 0,
-        customDisk4: 0,
-    };
 
     constructor(props) {
         super(props);
@@ -43,7 +13,6 @@ export default class FormExampleFieldControl extends Component  {
             shown: true,
         };
     }
-
 
     toggle() {
         this.setState({
@@ -63,16 +32,14 @@ export default class FormExampleFieldControl extends Component  {
         this.props.onSubmit(this.state);
     };
 
-
     render() {
-
         const hidden = {
             //display: this.state.shown ? "none" : "block",
             visibility: this.state.shown ? "hidden" : "visible",
             height: this.state.shown ? "0px" : "40px",
             marginBottom: this.state.shown ? "0px" : "12px",
             marginTop: this.state.shown ? "0px" : "12px"
-        }
+        };
         return (
             <Form className="ui segment" style={{borderColor:'#1178ab'}}>
                 <Form.Group widths='equal'>
@@ -82,7 +49,7 @@ export default class FormExampleFieldControl extends Component  {
                         min="0"
                         label="# Users"
                         placeholder="# Users"
-                        value={this.state.numPowerUsers}
+                        value={this.setState.numPowerUsers}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Heavy Resource Consumption" data-position="top left"
@@ -121,7 +88,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="# Users"
-                        value={this.state.numKnowledgeUsers}
+                        value={this.setState.numKnowledgeUsers}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Typical Resource Consumption" data-position="top left"
@@ -156,7 +123,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="# Users"
-                        value={this.state.numTaskUsers}
+                        value={this.setState.numTaskUsers}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Light Resource Consumption" data-position="top left"
@@ -191,7 +158,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="# Users"
-                        value={this.state.numCustomUsers}
+                        value={this.setState.numCustomUsers}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
@@ -202,8 +169,8 @@ export default class FormExampleFieldControl extends Component  {
                         name="customCPUs"
                         type="number"
                         min="0"
-                        placeholder="CPUs/User"
-                        value={this.state.customCPUs}
+                        placeholder="0"
+                        value={this.setState.customCPUs}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
@@ -211,7 +178,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="RAM/User"
-                        value={this.state.customRAM}
+                        value={this.setState.customRAM}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
@@ -219,7 +186,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="Disk/User"
-                        value={this.state.customDisk}
+                        value={this.setState.customDisk}
                         onChange={e => this.change(e)}
                     />
                 </Form.Group>
@@ -231,7 +198,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="# Users"
-                        value={this.state.numCustomUsers2}
+                        value={this.setState.numCustomUsers2}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
@@ -239,27 +206,27 @@ export default class FormExampleFieldControl extends Component  {
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customCPUs"
+                        name="customCPUs2"
                         type="number"
                         min="0"
-                        placeholder="CPUs/User"
-                        value={this.state.customCPUs2}
+                        placeholder="0"
+                        value={this.setState.customCPUs2}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customRAM"
+                        name="customRAM2"
                         type="number"
                         min="0"
                         placeholder="RAM/User"
-                        value={this.state.customRAM2}
+                        value={this.setState.customRAM2}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customDisk"
+                        name="customDisk2"
                         type="number"
                         min="0"
                         placeholder="Disk/User"
-                        value={this.state.customDisk2}
+                        value={this.setState.customDisk2}
                         onChange={e => this.change(e)}
                     />
                 </Form.Group>
@@ -270,7 +237,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="# Users"
-                        value={this.state.numCustomUsers3}
+                        value={this.setState.numCustomUsers3}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
@@ -278,27 +245,27 @@ export default class FormExampleFieldControl extends Component  {
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customCPUs"
+                        name="customCPUs3"
                         type="number"
                         min="0"
-                        placeholder="CPUs/User"
-                        value={this.state.customCPUs3}
+                        placeholder="0"
+                        value={this.setState.customCPUs3}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customRAM"
+                        name="customRAM3"
                         type="number"
                         min="0"
                         placeholder="RAM/User"
-                        value={this.state.customRAM3}
+                        value={this.setState.customRAM3}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customDisk"
+                        name="customDisk3"
                         type="number"
                         min="0"
                         placeholder="Disk/User"
-                        value={this.state.customDisk3}
+                        value={this.setState.customDisk3}
                         onChange={e => this.change(e)}
                     />
                 </Form.Group>
@@ -310,7 +277,7 @@ export default class FormExampleFieldControl extends Component  {
                         type="number"
                         min="0"
                         placeholder="# Users"
-                        value={this.state.numCustomUsers4}
+                        value={this.setState.numCustomUsers4}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input data-tooltip="Custom Resource Consumption" data-position="top left"
@@ -318,27 +285,27 @@ export default class FormExampleFieldControl extends Component  {
                                 onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customCPUs"
+                        name="customCPUs4"
                         type="number"
                         min="0"
-                        placeholder="CPUs/User"
-                        value={this.state.customCPUs4}
+                        placeholder="0"
+                        value={this.setState.customCPUs4}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customRAM"
+                        name="customRAM4"
                         type="number"
                         min="0"
                         placeholder="RAM/User"
-                        value={this.state.customRAM4}
+                        value={this.setState.customRAM4}
                         onChange={e => this.change(e)}
                     />
                     <Form.Input
-                        name="customDisk"
+                        name="customDisk4"
                         type="number"
                         min="0"
                         placeholder="Disk/User"
-                        value={this.state.customDisk4}
+                        value={this.setState.customDisk4}
                         onChange={e => this.change(e)}
                     />
                 </Form.Group>

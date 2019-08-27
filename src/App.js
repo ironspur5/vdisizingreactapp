@@ -11,7 +11,13 @@ import {
 
 class App extends Component {
     state = {
-        fields: {},
+        fields: {
+            numPowerUsers:0,
+            numKnowledgeUsers:0,
+            numTaskUsers:0,
+            numCustomUsers:0,
+            customCPUs:0
+        },
 
         cpu: 0,
         ram: 0,
@@ -24,45 +30,54 @@ class App extends Component {
         costPerMonthManagementVM: 0,
         totalPerMonth: 0,
         totalPerUserPerMonth: 0
+
     };
 
 
     onSubmit = (fields, cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
                 costPerMonthManagementVM, totalPerMonth, totalPerUserPerMonth) => {
 
-        const BMHostoCPUVMsavailable = data.BMHostoCPUVMsavailable;
-        const BMHostCPUtotal = data.BMHostCPUtotal;
-        const BMHostRAMavailable = data.BMHostRAMavailable;
-        const BMHostCostHrDenseIO = data.BMHostCostHrDenseIO;
-        const OCIVMCostOCPUHour = data.OCIVMCostOCPUHour;
-        const WindowsServerOSHr = data.WindowsServerOSHr;
-        const SGDUserYr = data.SGDUserYr;
-        const OCIHoursinamonth = data.OCIHoursinamonth;
+        const BMHostoCPUVMsavailable = Number(data.BMHostoCPUVMsavailable);
+        const BMHostCPUtotal = Number(data.BMHostCPUtotal);
+        const BMHostRAMavailable = Number(data.BMHostRAMavailable);
+        const BMHostCostHrDenseIO = Number(data.BMHostCostHrDenseIO);
+        const OCIVMCostOCPUHour = Number(data.OCIVMCostOCPUHour);
+        const WindowsServerOSHr = Number(data.WindowsServerOSHr);
+        const SGDUserYr = Number(data.SGDUserYr);
+        const OCIHoursinamonth = Number(data.OCIHoursinamonth);
 
-        const SGD_CPU = data.SGD_CPU;
+        const SGD_CPU = Number(data.SGD_CPU);
 
         this.setState({fields});
 
-        cpu = ((fields.numPowerUsers * data.PowerCPUs) + (fields.numKnowledgeUsers * data.KnowledgeCPUs) +
+        console.log(Object.keys(fields));
+
+        cpu = (
+            (fields.numPowerUsers * data.PowerCPUs) +
+            (fields.numKnowledgeUsers * data.KnowledgeCPUs) +
             (fields.numTaskUsers * data.TaskCPUs) +
-            (fields.numCustomUsers * fields.customCPUs) +
-            (fields.numCustomUsers2 * fields.customCPUs2) +
-            (fields.numCustomUsers3 * fields.customCPUs3) +
-            (fields.numCustomUsers4 * fields.customCPUs4));
+            (Number(fields.numCustomUsers) * Number(fields.customCPUs)) +
+            (Number(fields.numCustomUsers2) * Number(fields.customCPUs2)) +
+            (Number(fields.numCustomUsers3) * Number(fields.customCPUs3)) +
+            (Number(fields.numCustomUsers4) * Number(fields.customCPUs4)));
 
-        ram = ((fields.numPowerUsers * data.PowerRAM) + (fields.numKnowledgeUsers * data.KnowledgeRAM) +
+        ram = (
+            (fields.numPowerUsers * data.PowerRAM) +
+            (fields.numKnowledgeUsers * data.KnowledgeRAM) +
             (fields.numTaskUsers * data.TaskRAM) +
-            (fields.numCustomUsers * fields.customRAM) +
-            (fields.numCustomUsers2 * fields.customRAM2) +
-            (fields.numCustomUsers3 * fields.customRAM3) +
-            (fields.numCustomUsers4 * fields.customRAM4));
+            (Number(fields.numCustomUsers) * fields.customRAM) +
+            (Number(fields.numCustomUsers2) * fields.customRAM2) +
+            (Number(fields.numCustomUsers3) * fields.customRAM3) +
+            (Number(fields.numCustomUsers4) * fields.customRAM4));
 
-        disk = ((fields.numPowerUsers * data.PowerDisk) + (fields.numKnowledgeUsers * data.KnowledgeDisk) +
-            (fields.numTaskUsers * data.TaskDisk) +
-            (fields.numCustomUsers * fields.customDisk) +
-            (fields.numCustomUsers2 * fields.customDisk2) +
-            (fields.numCustomUsers3 * fields.customDisk3) +
-            (fields.numCustomUsers4 * fields.customDisk4));
+        disk = (
+            (fields.numPowerUsers * data.PowerDisk) +
+            (fields.numKnowledgeUsers * data.KnowledgeDisk) +
+            (Number(fields.numTaskUsers) * data.TaskDisk) +
+            (Number(fields.numCustomUsers) * fields.customDisk) +
+            (Number(fields.numCustomUsers2) * fields.customDisk2) +
+            (Number(fields.numCustomUsers3) * fields.customDisk3) +
+            (Number(fields.numCustomUsers4) * fields.customDisk4));
 
         var bmHostsByCPU = (cpu / BMHostoCPUVMsavailable);
         var bmHostsbyRAM = (ram / BMHostRAMavailable);
