@@ -1,23 +1,47 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import {
     Button,
     Form
 } from 'semantic-ui-react'
 
 
-export default class FormExampleFieldControl extends Component  {
+export default class FormExampleFieldControl extends Component {
+    state = {};
 
     constructor(props) {
         super(props);
         this.state = {
             shown: true,
+
+            numPowerUsers: 0,
+            numKnowledgeUsers: 0,
+            numTaskUsers: 0,
+
+            numCustomUsers: 0,
+            customCPUs: 0,
+            customRAM: 0,
+            customDisk: 0,
+
+            numCustomUsers2: 0,
+            customCPUs2: 0,
+            customRAM2: 0,
+            customDisk2: 0,
+
+            numCustomUsers3: 0,
+            customCPUs3: 0,
+            customRAM3: 0,
+            customDisk3: 0,
+
+            numCustomUsers4: 0,
+            customCPUs4: 0,
+            customRAM4: 0,
+            customDisk4: 0
         };
     }
 
     toggle() {
         this.setState({
             shown: !this.state.shown,
-
         });
     }
 
@@ -41,7 +65,7 @@ export default class FormExampleFieldControl extends Component  {
             marginTop: this.state.shown ? "0px" : "12px"
         };
         return (
-            <Form className="ui segment" style={{borderColor:'#1178ab'}}>
+            <Form className="ui segment" style={{borderColor: '#1178ab'}}>
                 <Form.Group widths='equal'>
                     <Form.Input
                         name="numPowerUsers"
@@ -231,7 +255,7 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-                <Form.Group widths='equal' style={ hidden }>
+                <Form.Group widths='equal' style={hidden}>
                     <Form.Input
                         name="numCustomUsers3"
                         type="number"
@@ -270,8 +294,7 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-
-                <Form.Group style={hidden} widths='equal'  >
+                <Form.Group style={hidden} widths='equal'>
                     <Form.Input
                         name="numCustomUsers4"
                         type="number"
@@ -310,8 +333,9 @@ export default class FormExampleFieldControl extends Component  {
                     />
                 </Form.Group>
 
-                <button className="circular ui button" data-tooltip="Click to add/remove 3 inputs"
-                        data-position="top left" onClick={this.toggle.bind(this)}>+/-</button>
+                <button className="circular ui button" data-tooltip="Show/hide more inputs"
+                        data-position="top left" onClick={this.toggle.bind(this)}>+/-
+                </button>
 
                 <div className="ui divider"></div>
 

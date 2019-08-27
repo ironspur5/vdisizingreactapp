@@ -8,31 +8,8 @@ import {
     Image
 } from 'semantic-ui-react'
 
-
 class App extends Component {
-    state = {
-        fields: {
-            numPowerUsers:0,
-            numKnowledgeUsers:0,
-            numTaskUsers:0,
-            numCustomUsers:0,
-            customCPUs:0
-        },
-
-        cpu: 0,
-        ram: 0,
-        disk: 0,
-
-        BMHostsOverall: 0,
-        costPerMonthBM: 0,
-        costPerMonthSW_Windows: 0,
-        costPerMonthSW_SGD: 0,
-        costPerMonthManagementVM: 0,
-        totalPerMonth: 0,
-        totalPerUserPerMonth: 0
-
-    };
-
+    state = {};
 
     onSubmit = (fields, cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
                 costPerMonthManagementVM, totalPerMonth, totalPerUserPerMonth) => {
@@ -45,12 +22,9 @@ class App extends Component {
         const WindowsServerOSHr = Number(data.WindowsServerOSHr);
         const SGDUserYr = Number(data.SGDUserYr);
         const OCIHoursinamonth = Number(data.OCIHoursinamonth);
-
         const SGD_CPU = Number(data.SGD_CPU);
 
         this.setState({fields});
-
-        console.log(Object.keys(fields));
 
         cpu = (
             (fields.numPowerUsers * data.PowerCPUs) +
@@ -93,7 +67,7 @@ class App extends Component {
         costPerMonthSW_SGD = (SGDUserYr / 12);
         costPerMonthManagementVM = (SGD_CPU * OCIHoursinamonth * OCIVMCostOCPUHour);
         totalPerMonth = (costPerMonthBM + costPerMonthSW_Windows + costPerMonthSW_SGD + costPerMonthManagementVM);
-        totalPerUserPerMonth = (totalPerMonth/totalUsers);
+        totalPerUserPerMonth = (totalPerMonth / totalUsers);
 
         this.setState({
             cpu, ram, disk, BMHostsOverall, costPerMonthBM, costPerMonthSW_Windows, costPerMonthSW_SGD,
@@ -121,16 +95,16 @@ class App extends Component {
 
                 <Header>
                 </Header>
-                    <div className="App2">
-                        <Header as='h2' >
-                            <Image
-                                style={{width: '250px', height: 'auto'}}
-                                //src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
-                                //src='https://www.stickpng.com/assets/images/584817d6cef1014c0b5e4999.png'
-                                src={require('./OracleLogov2.png')}
-                            />
-                        </Header>
-                    </div>
+                <div className="App2">
+                    <Header as='h2'>
+                        <Image
+                            style={{width: '250px', height: 'auto'}}
+                            //src='https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png'
+                            //src='https://www.stickpng.com/assets/images/584817d6cef1014c0b5e4999.png'
+                            src={require('./OracleLogov2.png')}
+                        />
+                    </Header>
+                </div>
                 <Header>
                 </Header>
 
@@ -139,55 +113,56 @@ class App extends Component {
                 </div>
 
                 <FormExampleFieldControl onSubmit={fields => this.onSubmit(fields)}/>
-                <div className="ui segment" style={{borderColor:'#1178ab'}}>
-                <Header>Total Requirements</Header>
+                <div className="ui segment" style={{borderColor: '#1178ab'}}>
+                    <Header>Total Requirements</Header>
 
-                <table className="ui celled table" >
-                    <thead>
-                    <tr>
-                        <th>oCPUs</th>
-                        <th>RAM (GB)</th>
-                        <th>Disk (GB)</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td data-label="oCPUs">{this.state.cpu}</td>
-                        <td data-label="RAM">{this.state.ram}</td>
-                        <td data-label="Disk">{this.state.disk}</td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <table className="ui celled table">
+                        <thead>
+                        <tr>
+                            <th>oCPUs</th>
+                            <th>RAM (GB)</th>
+                            <th>Disk (GB)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="oCPUs">{this.state.cpu}</td>
+                            <td data-label="RAM">{this.state.ram}</td>
+                            <td data-label="Disk">{this.state.disk}</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-                <Header> </Header>
+                    <Header> </Header>
 
-                <Header>Total Costs</Header>
+                    <Header>Total Costs</Header>
 
-                <table className="ui celled table">
-                    <thead>
-                    <tr>
-                        <th>Bare Metal Hosts</th>
-                        <th>Bare Metal $/month</th>
-                        <th>Windows License $/month</th>
-                        <th>SGD License $/month</th>
-                        <th>Management VM $/month</th>
-                        <th>Total $/month</th>
-                        <th>Total $/month/user</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td data-label="Bare Metal Hosts">{this.state.BMHostsOverall}</td>
-                        <td data-label="Bare Metal $/month">{this.state.costPerMonthBM}</td>
-                        <td data-label="Windows License $/month">{this.state.costPerMonthSW_Windows}</td>
-                        <td data-label="SGD License $/month">{this.state.costPerMonthSW_SGD}</td>
-                        <td data-label="Management VM $/month">{this.state.costPerMonthManagementVM}</td>
-                        <td data-label="Total $/month">{this.state.totalPerMonth}</td>
-                        <td data-label="Total $/month/user">{this.state.totalPerUserPerMonth}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div></div>
+                    <table className="ui celled table">
+                        <thead>
+                        <tr>
+                            <th>Bare Metal Hosts</th>
+                            <th>Bare Metal $/month</th>
+                            <th>Windows License $/month</th>
+                            <th>SGD License $/month</th>
+                            <th>Management VM $/month</th>
+                            <th>Total $/month</th>
+                            <th>Total $/month/user</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Bare Metal Hosts">{this.state.BMHostsOverall}</td>
+                            <td data-label="Bare Metal $/month">{this.state.costPerMonthBM}</td>
+                            <td data-label="Windows License $/month">{this.state.costPerMonthSW_Windows}</td>
+                            <td data-label="SGD License $/month">{this.state.costPerMonthSW_SGD}</td>
+                            <td data-label="Management VM $/month">{this.state.costPerMonthManagementVM}</td>
+                            <td data-label="Total $/month">{this.state.totalPerMonth}</td>
+                            <td data-label="Total $/month/user">{this.state.totalPerUserPerMonth}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         );
     }
 }

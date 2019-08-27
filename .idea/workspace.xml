@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39b51f1f-acfb-41cc-b17d-14fbfced8df3" name="Default Changelist" comment="">
+    <list default="true" id="39b51f1f-acfb-41cc-b17d-14fbfced8df3" name="Default Changelist" comment="Updated front end for consistency and integrated base values for input variables to account for calculating math.&#10;App is done! Deployment necessary">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
@@ -96,7 +96,7 @@
       <workItem from="1566571086946" duration="1029000" />
       <workItem from="1566824717245" duration="322000" />
       <workItem from="1566826599522" duration="233000" />
-      <workItem from="1566922027404" duration="9525000" />
+      <workItem from="1566922027404" duration="13572000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1566228016489</created>
@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566924973657</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Cleaned up files and removed unused functions">
+      <created>1566934409191</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1566934409191</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +264,8 @@
     <MESSAGE value="Updated formatting" />
     <MESSAGE value="Added config file to branch" />
     <MESSAGE value="Added all functionality requested by Moe, updated front and back end, TODO: fix math" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all functionality requested by Moe, updated front and back end, TODO: fix math" />
+    <MESSAGE value="Cleaned up files and removed unused functions" />
+    <MESSAGE value="Updated front end for consistency and integrated base values for input variables to account for calculating math.&#10;App is done! Deployment necessary" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated front end for consistency and integrated base values for input variables to account for calculating math.&#10;App is done! Deployment necessary" />
   </component>
 </project>
