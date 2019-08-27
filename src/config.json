@@ -1,4 +1,6 @@
 {
+  "_comment" : "SGD: Secure Global Desktop",
+
   "BMHostoCPUVMsavailable" : 182,
   "BMHostCPUtotal" : 52,
   "BMHostRAMavailable" : 756,

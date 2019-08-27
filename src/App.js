@@ -13,17 +13,17 @@ class App extends Component {
     state = {
         fields: {},
 
-        cpu: "",
-        ram: "",
-        disk: "",
+        cpu: 0,
+        ram: 0,
+        disk: 0,
 
-        BMHostsOverall: "",
-        costPerMonthBM: "",
-        costPerMonthSW_Windows: "",
-        costPerMonthSW_SGD: "",
-        costPerMonthManagementVM: "",
-        totalPerMonth: "",
-        totalPerUserPerMonth: ""
+        BMHostsOverall: 0,
+        costPerMonthBM: 0,
+        costPerMonthSW_Windows: 0,
+        costPerMonthSW_SGD: 0,
+        costPerMonthManagementVM: 0,
+        totalPerMonth: 0,
+        totalPerUserPerMonth: 0
     };
 
 
@@ -43,18 +43,34 @@ class App extends Component {
 
         this.setState({fields});
 
-        cpu = (fields.numPowerUsers * data.PowerCPUs) + (fields.numKnowledgeUsers * data.KnowledgeCPUs) + (fields.numTaskUsers * data.TaskCPUs) +
-            (fields.numCustomUsers * fields.customCPUs);
+        cpu = ((fields.numPowerUsers * data.PowerCPUs) + (fields.numKnowledgeUsers * data.KnowledgeCPUs) +
+            (fields.numTaskUsers * data.TaskCPUs) +
+            (fields.numCustomUsers * fields.customCPUs) +
+            (fields.numCustomUsers2 * fields.customCPUs2) +
+            (fields.numCustomUsers3 * fields.customCPUs3) +
+            (fields.numCustomUsers4 * fields.customCPUs4));
 
-        ram = (fields.numPowerUsers * data.PowerRAM) + (fields.numKnowledgeUsers * data.KnowledgeRAM) + (fields.numTaskUsers * data.TaskRAM) +
-            (fields.numCustomUsers * fields.customRAM);
+        ram = ((fields.numPowerUsers * data.PowerRAM) + (fields.numKnowledgeUsers * data.KnowledgeRAM) +
+            (fields.numTaskUsers * data.TaskRAM) +
+            (fields.numCustomUsers * fields.customRAM) +
+            (fields.numCustomUsers2 * fields.customRAM2) +
+            (fields.numCustomUsers3 * fields.customRAM3) +
+            (fields.numCustomUsers4 * fields.customRAM4));
 
-        disk = (fields.numPowerUsers * data.PowerDisk) + (fields.numKnowledgeUsers * data.KnowledgeDisk) + (fields.numTaskUsers * data.TaskDisk) +
-            (fields.numCustomUsers * fields.customDisk);
+        disk = ((fields.numPowerUsers * data.PowerDisk) + (fields.numKnowledgeUsers * data.KnowledgeDisk) +
+            (fields.numTaskUsers * data.TaskDisk) +
+            (fields.numCustomUsers * fields.customDisk) +
+            (fields.numCustomUsers2 * fields.customDisk2) +
+            (fields.numCustomUsers3 * fields.customDisk3) +
+            (fields.numCustomUsers4 * fields.customDisk4));
 
         var bmHostsByCPU = (cpu / BMHostoCPUVMsavailable);
         var bmHostsbyRAM = (ram / BMHostRAMavailable);
-        var totalUsers = (Number(fields.numPowerUsers) + Number(fields.numKnowledgeUsers) + Number(fields.numTaskUsers) + Number(fields.numCustomUsers));
+        var totalUsers = (Number(fields.numPowerUsers) + Number(fields.numKnowledgeUsers) + Number(fields.numTaskUsers)
+            + Number(fields.numCustomUsers)
+            + Number(fields.numCustomUsers2)
+            + Number(fields.numCustomUsers3)
+            + Number(fields.numCustomUsers4));
 
         BMHostsOverall = Math.max(bmHostsByCPU, bmHostsbyRAM);
         costPerMonthBM = (BMHostsOverall * BMHostCostHrDenseIO * OCIHoursinamonth * BMHostCPUtotal);
@@ -137,19 +153,19 @@ class App extends Component {
                     <tr>
                         <th>Bare Metal Hosts</th>
                         <th>Bare Metal $/month</th>
-                        <th>SW Windows $/month</th>
-                        <th>SW SGD $/month</th>
+                        <th>Windows License $/month</th>
+                        <th>SGD License $/month</th>
                         <th>Management VM $/month</th>
                         <th>Total $/month</th>
-                        <th>Total Total $/month/user</th>
+                        <th>Total $/month/user</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td data-label="Bare Metal Hosts">{this.state.BMHostsOverall}</td>
                         <td data-label="Bare Metal $/month">{this.state.costPerMonthBM}</td>
-                        <td data-label="SW Windows $/month">{this.state.costPerMonthSW_Windows}</td>
-                        <td data-label="SW SGD $/month">{this.state.costPerMonthSW_SGD}</td>
+                        <td data-label="Windows License $/month">{this.state.costPerMonthSW_Windows}</td>
+                        <td data-label="SGD License $/month">{this.state.costPerMonthSW_SGD}</td>
                         <td data-label="Management VM $/month">{this.state.costPerMonthManagementVM}</td>
                         <td data-label="Total $/month">{this.state.totalPerMonth}</td>
                         <td data-label="Total $/month/user">{this.state.totalPerUserPerMonth}</td>
