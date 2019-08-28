@@ -75,6 +75,9 @@ class App extends Component {
         });
 
         BMHostsOverall = Math.ceil(BMHostsOverall);
+        cpu = (cpu).toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        ram = (ram).toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        disk = (disk).toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         costPerMonthBM = (costPerMonthBM).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         costPerMonthSW_Windows = (costPerMonthSW_Windows).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         costPerMonthSW_SGD = (costPerMonthSW_SGD).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
