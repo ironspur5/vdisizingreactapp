@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b51f1f-acfb-41cc-b17d-14fbfced8df3" name="Default Changelist" comment="Updated front end for consistency and integrated base values for input variables to account for calculating math.&#10;App is done! Deployment necessary">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +99,10 @@
       <workItem from="1566824717245" duration="322000" />
       <workItem from="1566826599522" duration="233000" />
       <workItem from="1566922027404" duration="13572000" />
+      <workItem from="1567085214756" duration="1464000" />
+      <workItem from="1567102113351" duration="2524000" />
+      <workItem from="1567107053197" duration="500000" />
+      <workItem from="1567107767470" duration="5857000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1566228016489</created>

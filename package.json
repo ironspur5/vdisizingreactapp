@@ -1,6 +1,7 @@
 {
   "name": "vdisizingreactapp",
   "version": "0.1.0",
+  "homepage": "http://www.cloudsolutionhubs.com/vdicalculator",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
